@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.edurican'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.mybatis:mybatis:3.5.13'
+    implementation 'com.zaxxer:HikariCP:5.0.1'
+    implementation 'org.slf4j:slf4j-simple:2.0.12'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.3.3'
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
