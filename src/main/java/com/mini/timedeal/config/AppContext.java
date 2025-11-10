@@ -52,7 +52,7 @@ public class AppContext {
         }
     }
 
-    public void registerBean(Object object) {
+    public void registerBeanObject(Object object) {
         Class<?> beanClass = object.getClass();
         beans.put(beanClass, object);
 

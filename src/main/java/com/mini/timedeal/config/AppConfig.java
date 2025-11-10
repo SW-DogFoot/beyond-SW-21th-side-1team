@@ -27,7 +27,7 @@ public final class AppConfig {
         
         // Mapper 등록
         PromotionMapper promotionMapper = sqlSession.getMapper(PromotionMapper.class);
-        context.registerBean(promotionMapper);
+        context.registerBeanObject(promotionMapper);
         
         // Service 등록
         context.registerBean(PromotionService.class, PromotionMapper.class);
