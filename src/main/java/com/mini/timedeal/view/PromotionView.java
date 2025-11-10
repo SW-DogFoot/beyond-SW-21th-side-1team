@@ -5,6 +5,7 @@ import com.mini.timedeal.domain.promotion.dto.PromotionDTO;
 import com.mini.timedeal.domain.promotion.service.PromotionService;
 import com.mini.timedeal.enums.PromotionStatus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PromotionView {
@@ -19,7 +20,9 @@ public class PromotionView {
      *  특정 프로모션 보여주기
      */
     public void showPromotion(Long promotionId) {
-        printPromotions((List<PromotionDTO>) promotionService.getPromotion(promotionId));
+        List<PromotionDTO> promotions = new ArrayList<>();
+        promotions.add(promotionService.getPromotion(promotionId));
+        printPromotions(promotions);
     }
 
     /**

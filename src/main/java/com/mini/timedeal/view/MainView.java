@@ -5,7 +5,7 @@ import com.mini.timedeal.enums.PromotionStatus;
 import java.util.Scanner;
 
 public class MainView {
-    private final PromotionView promotionView = new PromotionView();
+    private final AdminView adminView = new AdminView();
 
     public MainView() {
 
@@ -17,10 +17,7 @@ public class MainView {
 
         do {
 
-            System.out.println("아무거나");
-            sc.nextLine();
-
-            promotionView.showPromotions(PromotionStatus.ACTIVE);
+            adminView.showAdminMenu();
 
         } while (true);
     }
