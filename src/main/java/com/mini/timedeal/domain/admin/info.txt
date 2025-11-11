@@ -1,0 +1,26 @@
+admin
+ ├─dto        // Admin 관련 요청/응답 객체
+ ├─model      // Admin 도메인 객체
+ ├─service    // Admin 비즈니스 로직
+ ├─mapper     // DB 매핑
+ ├─controller // Admin API / Web Controller
+ └─repository // DB 접근 객체
+
+| 패키지        | 역할                                |
+| ---------- | --------------------------------- |
+| dto        | 클라이언트 요청과 응답 객체 (JSON 매핑)         |
+| model      | Admin 핵심 도메인 객체 (DB와 무관한 비즈니스 객체) |
+| service    | 비즈니스 로직 처리 (Controller에서 호출)      |
+| mapper     | DB와 매핑 (MyBatis, JPA 등)           |
+| controller | HTTP 요청 처리, 라우팅                   |
+| repository | DB 직접 접근, 쿼리 실행                   |
+
+AdminUser : 판매자 정보만 담음 (상품 정보 아님)
+
+Product : 실제 등록, 수정, 삭제, 조회 대상
+
+AdminRepository / AdminMapper : Product CRUD 담당
+
+DTO : Controller ↔ Service 간 데이터 전달
+
+Service : 비즈니스 로직 처리
