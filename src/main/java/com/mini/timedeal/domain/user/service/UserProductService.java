@@ -1,7 +1,10 @@
 package com.mini.timedeal.domain.user.service;
 
+import com.mini.timedeal.domain.user.dto.UserProductDTO;
 import com.mini.timedeal.domain.user.mapper.UserProductMapper;
 import com.mini.timedeal.domain.user.model.UserProduct;
+
+import java.util.List;
 
 public class UserProductService {
 
@@ -14,9 +17,8 @@ public class UserProductService {
     /*
     * 유저가 구매한 상품들 불러오기
     * */
-    public UserProduct getUserProducts(Long userId) {
+    public List<UserProductDTO> userProductList(Long userId) {
 
-        userProductMapper.getUserProducts(userId);
-        return null;
+        return userProductMapper.getUserProducts(userId);
     }
 }

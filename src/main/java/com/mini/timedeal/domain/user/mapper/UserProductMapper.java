@@ -1,10 +1,12 @@
 package com.mini.timedeal.domain.user.mapper;
 
+import com.mini.timedeal.domain.user.dto.UserProductDTO;
 import com.mini.timedeal.domain.user.model.UserProduct;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface UserProductMapper {
-    List<UserProduct> getUserProducts(Long userId);
+    void saveUserProducts(UserProduct userProduct);
+    List<UserProductDTO> getUserProducts(Long userId);
 }
