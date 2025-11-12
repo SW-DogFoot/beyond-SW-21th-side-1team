@@ -56,6 +56,8 @@ public class Promotion {
         return totalQuantity;
     }
 
+    public Integer setTotalQuantity(Integer totalQuantity) { return this.totalQuantity = totalQuantity; }
+
     public Integer getIssuedQuantity() {
         return issuedQuantity;
     }

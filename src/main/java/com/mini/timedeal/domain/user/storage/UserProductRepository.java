@@ -23,7 +23,7 @@ public class UserProductRepository implements UserProductMapper {
     public UserProductRepository() {
 
         products.put(100L, new Product(100L, "기타", "일렉기타", 10000));
-        promotions.put(1L, new Promotion(1L, 100L, PromotionStatus.ACTIVE, 10, 10, 10, LocalDateTime.now(), LocalDateTime.now().plusMinutes(3)));
+        promotions.put(1L, new Promotion(100L, 10, 10, LocalDateTime.now(), LocalDateTime.now().plusMinutes(3)));
 //        userProducts.add(new UserProduct(1L, 1L, 100L, LocalDateTime.now()));
     }
 

@@ -48,4 +48,19 @@ public final class PromotionRepository implements PromotionMapper {
     public void deletePromotion(Long id) {
         promotions.remove(id);
     }
+
+    @Override
+    public void decreaseStock(Long promotionId) {
+        Promotion promotion = findById(promotionId);
+        if (promotion == null) {
+            throw new IllegalArgumentException("존재하지 않는 프로모션입니다.");
+        }
+
+        int currentQuantity = promotion.getTotalQuantity();
+        if (currentQuantity <= 0) {
+            throw new IllegalStateException("재고가 부족합니다.");
+        }
+
+        promotion.setTotalQuantity(currentQuantity - 1);
+    }
 }

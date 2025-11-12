@@ -22,31 +22,6 @@ public class UserView {
     User user = new User();
 
     /*
-    * 로그인
-    * */
-    public void login() {
-
-        System.out.println("[로그인]");
-        System.out.print("username 입력 : ");
-        String username = sc.next();
-        System.out.print("password 입력 : ");
-        String password = sc.next();
-
-        user = userService.login(username, password);
-
-        if (user == null) {
-            System.out.println("존재하지 않는 회원입니다. 다시 입력해주세요.\n");
-            login();
-        } else if(user.getRole() == UserRole.USER) {
-            System.out.println();
-            userMenu();
-        } else if(user.getRole() == UserRole.ADMIN) {
-            System.out.println();
-            adminMenu();
-        }
-    }
-
-    /*
     * 일반 유저 메뉴
     * */
     public void userMenu() {
@@ -90,12 +65,5 @@ public class UserView {
                 default: System.out.println("다시 입력해주세요."); System.out.println(); break;
             }
         }
-    }
-
-    /*
-    * 관리자 메뉴
-    * */
-    public void adminMenu() {
-
     }
 }
