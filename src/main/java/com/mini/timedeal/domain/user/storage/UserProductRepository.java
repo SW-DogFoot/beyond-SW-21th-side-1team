@@ -1,10 +1,9 @@
 package com.mini.timedeal.domain.user.storage;
 
-import com.mini.timedeal.domain.Product;
+import com.mini.timedeal.domain.prodcut.model.Product;
 import com.mini.timedeal.domain.promotion.model.Promotion;
 import com.mini.timedeal.domain.user.dto.UserProductDTO;
 import com.mini.timedeal.domain.user.mapper.UserProductMapper;
-import com.mini.timedeal.domain.user.model.User;
 import com.mini.timedeal.domain.user.model.UserProduct;
 import com.mini.timedeal.enums.PromotionStatus;
 

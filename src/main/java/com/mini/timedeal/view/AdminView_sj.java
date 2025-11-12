@@ -1,17 +1,17 @@
 package com.mini.timedeal.view;
 
-import com.mini.timedeal.domain.Product;
-import com.mini.timedeal.domain.admin.dto.AdminDTO;
-import com.mini.timedeal.domain.admin.service.AdminService;
+import com.mini.timedeal.domain.prodcut.model.Product;
+import com.mini.timedeal.domain.prodcut.dto.ProductDTO;
+import com.mini.timedeal.domain.prodcut.service.ProductService;
 
 import java.util.Scanner;
 
 public class AdminView_sj {
-    private final AdminService adminService;
+    private final ProductService productService;
     Scanner scanner = new Scanner(System.in);
 
-    public AdminView_sj(AdminService adminService) {
-        this.adminService = adminService;
+    public AdminView_sj(ProductService productService) {
+        this.productService = productService;
     }
 
     //판매자 메뉴
@@ -48,12 +48,12 @@ public class AdminView_sj {
         System.out.print("가격: ");
         int price = scanner.nextInt();
 
-        AdminDTO dto = new AdminDTO();
+        ProductDTO dto = new ProductDTO();
         dto.setName(name);
         dto.setDescription(description);
         dto.setPrice(price);
 
-        adminService.addProduct(dto);
+        productService.addProduct(dto);
         System.out.println("상품이 등록되었습니다!");
     }
 
@@ -70,12 +70,12 @@ public class AdminView_sj {
         System.out.print("새 가격: ");
         int price = scanner.nextInt();
 
-        AdminDTO dto = new AdminDTO();
+        ProductDTO dto = new ProductDTO();
         dto.setName(name);
         dto.setDescription(description);
         dto.setPrice(price);
 
-        adminService.updateProduct(id, dto);
+        productService.updateProduct(id, dto);
         System.out.println("상품이 수정되었습니다!");
     }
 
@@ -85,7 +85,7 @@ public class AdminView_sj {
         Long id = scanner.nextLong();
         scanner.nextLine();
 
-        adminService.deleteProduct(id);
+        productService.deleteProduct(id);
         System.out.println("상품이 삭제되었습니다!");
     }
 
@@ -95,7 +95,7 @@ public class AdminView_sj {
         Long id = scanner.nextLong();
         scanner.nextLine();
 
-        Product product = adminService.searchProduct(id);
+        Product product = productService.searchProduct(id);
         if (product == null) {
             System.out.println("해당 상품이 존재하지 않습니다.");
         } else {

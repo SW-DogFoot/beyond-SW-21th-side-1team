@@ -1,15 +1,13 @@
-package com.mini.timedeal.domain.admin.storage;
+package com.mini.timedeal.domain.prodcut.storage;
 
-import com.mini.timedeal.domain.Product;
-import com.mini.timedeal.domain.admin.mapper.AdminMapper;
-import com.mini.timedeal.domain.admin.model.AdminUser;
-import com.mini.timedeal.domain.promotion.model.Promotion;
+import com.mini.timedeal.domain.prodcut.model.Product;
+import com.mini.timedeal.domain.prodcut.mapper.productMapper;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AdminRepository implements AdminMapper {
+public class AdminRepository implements productMapper {
 
     private Long primaryKey = 1L;
     private final Map<Long, Product> products = new HashMap<>();

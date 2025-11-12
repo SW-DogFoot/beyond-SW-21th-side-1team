@@ -1,6 +1,6 @@
 package com.mini.timedeal.domain.promotion.service;
 
-import com.mini.timedeal.domain.Product;
+import com.mini.timedeal.domain.prodcut.model.Product;
 import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
 import com.mini.timedeal.domain.promotion.model.Promotion;
 import com.mini.timedeal.domain.promotion.dto.PromotionDTO;

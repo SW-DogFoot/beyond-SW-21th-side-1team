@@ -1,11 +1,10 @@
-package com.mini.timedeal.domain.admin.mapper;
+package com.mini.timedeal.domain.prodcut.mapper;
 
-import com.mini.timedeal.domain.Product;
-import com.mini.timedeal.domain.admin.model.AdminUser;
+import com.mini.timedeal.domain.prodcut.model.Product;
 
 import java.util.List;
 
-public interface AdminMapper {
+public interface productMapper {
     //상품 등록
     void insertProduct(Product product);
 
