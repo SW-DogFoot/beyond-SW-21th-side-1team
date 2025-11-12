@@ -23,6 +23,7 @@ public class UserRepository implements UserMapper {
 
     public UserRepository() {
         users.put("qwer", new User(1L, "qwer", "1234", UserRole.USER));
+        users.put("asdf", new User(2L, "asdf", "1234", UserRole.ADMIN));
     }
 
     @Override

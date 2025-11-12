@@ -1,5 +1,6 @@
 package com.mini.timedeal.view;
 
+import com.mini.timedeal.config.AppContext;
 import com.mini.timedeal.domain.promotion.model.Promotion;
 import com.mini.timedeal.domain.user.dto.UserProductDTO;
 import com.mini.timedeal.domain.user.mapper.UserMapper;
@@ -8,6 +9,7 @@ import com.mini.timedeal.domain.user.service.UserProductService;
 import com.mini.timedeal.domain.user.service.UserService;
 import com.mini.timedeal.domain.user.storage.UserProductRepository;
 import com.mini.timedeal.domain.user.storage.UserRepository;
+import com.mini.timedeal.enums.PromotionStatus;
 import com.mini.timedeal.enums.UserRole;
 
 import java.util.List;
@@ -15,16 +17,20 @@ import java.util.Scanner;
 
 public class UserView {
 
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
+    private final UserService userService;
+    private final UserProductService userProductService;
 
-    UserService userService = new UserService(new UserRepository());
-    UserProductService userProductService = new UserProductService(new UserProductRepository());
-    User user = new User();
+    public UserView() {
+        AppContext context = AppContext.getInstance();
+        this.userService = context.getBean(UserService.class);
+        this.userProductService = context.getBean(UserProductService.class);
+    }
 
     /*
     * 일반 유저 메뉴
     * */
-    public void userMenu() {
+    public void userMenu(User user) {
 
         while (true) {
             System.out.print("""
@@ -35,17 +41,17 @@ public class UserView {
                     0. 나가기
                     """);
             System.out.print("실행할 메뉴 번호를 입력하세요 : ");
-            int menu = sc.nextInt();
+            int menu = Integer.parseInt(sc.nextLine());
 
             switch (menu) {
                 case 1:
                     PromotionView promotionView = new PromotionView();
-                    promotionView.showPromotions();
+                    promotionView.showPromotions(PromotionStatus.ACTIVE);
                     System.out.println();
                     break;
                 case 2:
                     System.out.print("구매할 상품의 프로모션 아이디를 입력해주세요 : ");
-                    Long promotionId = sc.nextLong();
+                    Long promotionId = Long.parseLong(sc.nextLine());
                     userService.order(promotionId);
                     System.out.println();
                     break;
@@ -61,7 +67,8 @@ public class UserView {
                     }
                     System.out.println();
                     break;
-                case 0: System.exit(0);
+                case 0:
+                    return;
                 default: System.out.println("다시 입력해주세요."); System.out.println(); break;
             }
         }

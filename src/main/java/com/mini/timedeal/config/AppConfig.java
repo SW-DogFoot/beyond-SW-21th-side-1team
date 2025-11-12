@@ -32,7 +32,7 @@ public final class AppConfig {
         // Service 등록
         context.registerBean(PromotionService.class, PromotionMapper.class, ProductMapper.class);
         context.registerBean(ProductService.class, ProductMapper.class);
-        context.registerBean(UserService.class, UserMapper.class);
+        context.registerBean(UserService.class, UserMapper.class, PromotionMapper.class);
         context.registerBean(UserProductService.class, UserProductMapper.class);
     }
 
