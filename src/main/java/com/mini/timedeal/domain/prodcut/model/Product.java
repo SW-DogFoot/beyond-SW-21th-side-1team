@@ -1,6 +1,4 @@
-package com.mini.timedeal.domain;
-
-import java.time.LocalDateTime;
+package com.mini.timedeal.domain.prodcut.model;
 
 /**
  * 상품

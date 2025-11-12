@@ -2,10 +2,8 @@ package com.mini.timedeal.domain;
 
 import com.mini.timedeal.config.AppConfig;
 import com.mini.timedeal.config.AppContext;
-import com.mini.timedeal.domain.admin.service.AdminService;
-import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
+import com.mini.timedeal.domain.prodcut.service.ProductService;
 import com.mini.timedeal.domain.promotion.service.PromotionService;
-import com.mini.timedeal.domain.promotion.storage.PromotionRepository;
 import com.mini.timedeal.domain.user.service.UserProductService;
 import com.mini.timedeal.domain.user.service.UserService;
 import org.junit.jupiter.api.Assertions;
@@ -27,9 +25,9 @@ public class AppContextTests {
         AppContext context = AppContext.getInstance();
         config.initRepository();
 
-        AdminService adminService1 = context.getBean(AdminService.class);
-        AdminService adminService2 = context.getBean(AdminService.class);
-        Assertions.assertEquals(adminService1, adminService2);
+        ProductService productService1 = context.getBean(ProductService.class);
+        ProductService productService2 = context.getBean(ProductService.class);
+        Assertions.assertEquals(productService1, productService2);
 
         PromotionService promotionService1 = context.getBean(PromotionService.class);
         PromotionService promotionService2 = context.getBean(PromotionService.class);
@@ -50,9 +48,9 @@ public class AppContextTests {
         AppContext context = AppContext.getInstance();
         config.initMyBatis();
 
-        AdminService adminService1 = context.getBean(AdminService.class);
-        AdminService adminService2 = context.getBean(AdminService.class);
-        Assertions.assertEquals(adminService1, adminService2);
+        ProductService productService1 = context.getBean(ProductService.class);
+        ProductService productService2 = context.getBean(ProductService.class);
+        Assertions.assertEquals(productService1, productService2);
 
         PromotionService promotionService1 = context.getBean(PromotionService.class);
         PromotionService promotionService2 = context.getBean(PromotionService.class);

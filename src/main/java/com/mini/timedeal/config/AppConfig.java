@@ -1,8 +1,8 @@
 package com.mini.timedeal.config;
 
-import com.mini.timedeal.domain.admin.mapper.AdminMapper;
-import com.mini.timedeal.domain.admin.service.AdminService;
-import com.mini.timedeal.domain.admin.storage.AdminRepository;
+import com.mini.timedeal.domain.prodcut.mapper.productMapper;
+import com.mini.timedeal.domain.prodcut.service.ProductService;
+import com.mini.timedeal.domain.prodcut.storage.AdminRepository;
 import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
 import com.mini.timedeal.domain.promotion.service.PromotionService;
 import com.mini.timedeal.domain.promotion.storage.PromotionRepository;
@@ -31,7 +31,7 @@ public final class AppConfig {
 
         // Service 등록
         context.registerBean(PromotionService.class, PromotionMapper.class);
-        context.registerBean(AdminService.class, AdminMapper.class);
+        context.registerBean(ProductService.class, productMapper.class);
         context.registerBean(UserService.class, UserMapper.class);
         context.registerBean(UserProductService.class, UserProductMapper.class);
     }
@@ -42,13 +42,13 @@ public final class AppConfig {
         
         // Mapper 등록
         context.registerBeanObject(sqlSession.getMapper(PromotionMapper.class));
-        context.registerBeanObject(sqlSession.getMapper(AdminMapper.class));
+        context.registerBeanObject(sqlSession.getMapper(productMapper.class));
         context.registerBeanObject(sqlSession.getMapper(UserMapper.class));
         context.registerBeanObject(sqlSession.getMapper(UserProductMapper.class));
         
         // Service 등록
         context.registerBean(PromotionService.class, PromotionMapper.class);
-        context.registerBean(AdminService.class, AdminMapper.class);
+        context.registerBean(ProductService.class, productMapper.class);
         context.registerBean(UserService.class, UserMapper.class);
         context.registerBean(UserProductService.class, UserProductMapper.class);
     }

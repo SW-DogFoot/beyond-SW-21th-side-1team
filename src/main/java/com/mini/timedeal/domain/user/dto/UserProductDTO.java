@@ -1,13 +1,9 @@
 package com.mini.timedeal.domain.user.dto;
 
-import com.mini.timedeal.domain.Product;
-import com.mini.timedeal.domain.promotion.dto.PromotionDTO;
+import com.mini.timedeal.domain.prodcut.model.Product;
 import com.mini.timedeal.domain.promotion.model.Promotion;
-import com.mini.timedeal.domain.user.model.UserProduct;
-import com.mini.timedeal.support.utils.Calculator;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class UserProductDTO {
 
