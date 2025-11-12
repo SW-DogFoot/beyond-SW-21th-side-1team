@@ -13,4 +13,5 @@ public interface PromotionMapper {
     void insertPromotion(Promotion promotion);
     void updatePromotion(Promotion promotion);
     void deletePromotion(Long id);
+    void decreaseStock(Long promotionId);
 }

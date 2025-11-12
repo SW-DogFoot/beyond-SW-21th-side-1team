@@ -15,7 +15,7 @@ public class UserProduct {
     public UserProduct() {
     }
 
-    public UserProduct(Long id, Long userId, Long productId, LocalDateTime purchasedAt) {
+    public UserProduct(Long userId, Long productId, LocalDateTime purchasedAt) {
         this.id = id;
         this.userId = userId;
         this.productId = productId;

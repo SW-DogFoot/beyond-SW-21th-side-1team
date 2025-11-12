@@ -20,7 +20,6 @@ public class UserRepository implements UserMapper {
     private final UserProductRepository ur = new UserProductRepository();
 
     private User currentUser = new User();
-    private Long id = 0L;
 
     public UserRepository() {
         users.put("qwer", new User(1L, "qwer", "1234", UserRole.USER));
@@ -54,10 +53,10 @@ public class UserRepository implements UserMapper {
         }
 
         // 재고 차감
+        pr.decreaseStock(promotionId);
 
         // 구매내역 저장
         UserProduct userProduct = new UserProduct(
-                id++,
                 currentUser.getId(),
                 promotion.getProductId(),
                 now
