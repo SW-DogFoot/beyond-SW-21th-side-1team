@@ -6,11 +6,11 @@ import com.mini.timedeal.domain.admin.service.AdminService;
 
 import java.util.Scanner;
 
-public class AdminView {
+public class AdminView_sj {
     private final AdminService adminService;
     Scanner scanner = new Scanner(System.in);
 
-    public AdminView(AdminService adminService) {
+    public AdminView_sj(AdminService adminService) {
         this.adminService = adminService;
     }
 
