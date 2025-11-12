@@ -6,5 +6,4 @@ import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
     User findByUsernameAndPassword(String username, String password);
-    UserProduct orderPromotion(Long promotionId);
 }
