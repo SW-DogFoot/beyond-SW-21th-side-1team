@@ -52,7 +52,7 @@ public class UserView {
                 case 2:
                     System.out.print("구매할 상품의 프로모션 아이디를 입력해주세요 : ");
                     Long promotionId = Long.parseLong(sc.nextLine());
-                    userService.order(promotionId);
+                    userService.order(promotionId, user);
                     System.out.println();
                     break;
                 case 3:
