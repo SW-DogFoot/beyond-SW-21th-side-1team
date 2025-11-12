@@ -1,32 +1,43 @@
-package com.mini.timedeal.domain;
+package com.mini.timedeal.domain.admin.dto;
 
 import java.time.LocalDateTime;
 
-/**
- * 상품
- */
-public class Product {
-    private Long id;
+public class AdminDTO {
+
+    // 판매자 정보
+    private Long adminId;
+    private String adminName;
+
+    // 상품 정보
     private String name;
     private String description;
     private Integer price;
 
-    public Product() {
+    public AdminDTO() {
     }
 
-    public Product(Long id, String name, String description, Integer price) {
-        this.id = id;
+    public AdminDTO(Long adminId, String adminName, String name, String description, Integer price) {
+        this.adminId = adminId;
+        this.adminName = adminName;
         this.name = name;
         this.description = description;
         this.price = price;
     }
 
-    public Long getId() {
-        return id;
+    public Long getAdminId() {
+        return adminId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAdminId(Long adminId) {
+        this.adminId = adminId;
+    }
+
+    public String getAdminName() {
+        return adminName;
+    }
+
+    public void setAdminName(String adminName) {
+        this.adminName = adminName;
     }
 
     public String getName() {
