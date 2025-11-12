@@ -19,11 +19,11 @@ public class UserService {
     private final UserProductMapper userProductMapper;
     private final PromotionMapper promotionMapper;
 
-    public UserService() {
+    public UserService(UserMapper userMapper, UserProductMapper userProductMapper, PromotionMapper promotionMapper) {
         AppContext context = AppContext.getInstance();
-        this.userMapper = context.getBean(UserMapper.class);
-        this.userProductMapper = context.getBean(UserProductMapper.class);
-        this.promotionMapper = context.getBean(PromotionMapper.class);
+        this.userMapper = userMapper;
+        this.userProductMapper = userProductMapper;
+        this.promotionMapper = promotionMapper;
     }
 
     /*
