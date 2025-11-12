@@ -4,7 +4,7 @@ import com.mini.timedeal.domain.prodcut.model.Product;
 
 import java.util.List;
 
-public interface productMapper {
+public interface ProductMapper {
     //상품 등록
     void insertProduct(Product product);
 

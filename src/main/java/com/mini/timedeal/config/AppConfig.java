@@ -1,8 +1,8 @@
 package com.mini.timedeal.config;
 
-import com.mini.timedeal.domain.prodcut.mapper.productMapper;
+import com.mini.timedeal.domain.prodcut.mapper.ProductMapper;
 import com.mini.timedeal.domain.prodcut.service.ProductService;
-import com.mini.timedeal.domain.prodcut.storage.AdminRepository;
+import com.mini.timedeal.domain.prodcut.storage.ProductRepository;
 import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
 import com.mini.timedeal.domain.promotion.service.PromotionService;
 import com.mini.timedeal.domain.promotion.storage.PromotionRepository;
@@ -25,13 +25,13 @@ public final class AppConfig {
 
         // Repository 등록
         context.registerBean(PromotionRepository.class);
-        context.registerBean(AdminRepository.class);
+        context.registerBean(ProductRepository.class);
         context.registerBean(UserRepository.class);
         context.registerBean(UserProductRepository.class);
 
         // Service 등록
-        context.registerBean(PromotionService.class, PromotionMapper.class);
-        context.registerBean(ProductService.class, productMapper.class);
+        context.registerBean(PromotionService.class, PromotionMapper.class, ProductMapper.class);
+        context.registerBean(ProductService.class, ProductMapper.class);
         context.registerBean(UserService.class, UserMapper.class);
         context.registerBean(UserProductService.class, UserProductMapper.class);
     }
@@ -42,13 +42,13 @@ public final class AppConfig {
         
         // Mapper 등록
         context.registerBeanObject(sqlSession.getMapper(PromotionMapper.class));
-        context.registerBeanObject(sqlSession.getMapper(productMapper.class));
+        context.registerBeanObject(sqlSession.getMapper(ProductMapper.class));
         context.registerBeanObject(sqlSession.getMapper(UserMapper.class));
         context.registerBeanObject(sqlSession.getMapper(UserProductMapper.class));
         
         // Service 등록
         context.registerBean(PromotionService.class, PromotionMapper.class);
-        context.registerBean(ProductService.class, productMapper.class);
+        context.registerBean(ProductService.class, ProductMapper.class);
         context.registerBean(UserService.class, UserMapper.class);
         context.registerBean(UserProductService.class, UserProductMapper.class);
     }

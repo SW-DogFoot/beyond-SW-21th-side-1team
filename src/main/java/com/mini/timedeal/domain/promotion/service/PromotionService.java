@@ -1,20 +1,22 @@
 package com.mini.timedeal.domain.promotion.service;
 
+import com.mini.timedeal.domain.prodcut.mapper.ProductMapper;
 import com.mini.timedeal.domain.prodcut.model.Product;
 import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
 import com.mini.timedeal.domain.promotion.model.Promotion;
 import com.mini.timedeal.domain.promotion.dto.PromotionDTO;
 import com.mini.timedeal.enums.PromotionStatus;
-import com.mini.timedeal.support.utils.Calculator;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 public final class PromotionService {
     private final PromotionMapper promotionMapper;
+    private final ProductMapper productMapper;
 
-    public PromotionService(PromotionMapper promotionMapper) {
+    public PromotionService(PromotionMapper promotionMapper, ProductMapper productMapper) {
         this.promotionMapper = promotionMapper;
+        this.productMapper = productMapper;
     }
 
     /**
@@ -81,20 +83,9 @@ public final class PromotionService {
             return null;
         }
 
-        Product product = new Product();
-
-        int discountedPrice = Calculator.calculateDiscountedPrice(1000, promotion.getDiscountRate());
-        int remainingQuantity = promotion.getTotalQuantity() - promotion.getIssuedQuantity();
-        String remainingTime = Calculator.calculateRemainingTime(LocalDateTime.now(), promotion.getEndTime());
-
-        return new PromotionDTO(
-                promotion.getId(),
-                "temp promotion",
-                "temp description",
-                discountedPrice,
-                remainingQuantity,
-                remainingTime
-        );
+        LocalDateTime now = LocalDateTime.now();
+        Product product = productMapper.findById(promotion.getProductId());
+        return PromotionDTO.from(promotion, product, now);
     }
 
     /**
@@ -106,7 +97,7 @@ public final class PromotionService {
 
         return promotions.stream()
                 .map(promotion -> {
-                    Product product = new Product();
+                    Product product = productMapper.findById(promotion.getProductId());
                     return PromotionDTO.from(promotion, product, now);
                 })
                 .toList();
@@ -121,7 +112,7 @@ public final class PromotionService {
 
         return promotions.stream()
                 .map(promotion -> {
-                    Product product = new Product();
+                    Product product = productMapper.findById(promotion.getProductId());
                     return PromotionDTO.from(promotion, product, now);
                 })
                 .toList();

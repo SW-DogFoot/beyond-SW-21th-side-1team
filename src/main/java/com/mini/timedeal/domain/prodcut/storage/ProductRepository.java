@@ -1,18 +1,18 @@
 package com.mini.timedeal.domain.prodcut.storage;
 
 import com.mini.timedeal.domain.prodcut.model.Product;
-import com.mini.timedeal.domain.prodcut.mapper.productMapper;
+import com.mini.timedeal.domain.prodcut.mapper.ProductMapper;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AdminRepository implements productMapper {
+public class ProductRepository implements ProductMapper {
 
     private Long primaryKey = 1L;
     private final Map<Long, Product> products = new HashMap<>();
 
-    public AdminRepository() {
+    public ProductRepository() {
     }
 
     @Override

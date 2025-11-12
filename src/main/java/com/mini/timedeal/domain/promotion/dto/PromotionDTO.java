@@ -24,14 +24,14 @@ public class PromotionDTO {
     }
 
     public static PromotionDTO from(Promotion promotion, Product product, LocalDateTime now) {
-        int discountedPrice = Calculator.calculateDiscountedPrice(1000, promotion.getDiscountRate());
+        int discountedPrice = Calculator.calculateDiscountedPrice(product.getPrice(), promotion.getDiscountRate());
         int remainingQuantity = promotion.getTotalQuantity() - promotion.getIssuedQuantity();
         String remainingTime = Calculator.calculateRemainingTime(now, promotion.getEndTime());
 
         return new PromotionDTO(
                 promotion.getId(),
-                "temp promotion",
-                "temp description",
+                product.getName(),
+                product.getDescription(),
                 discountedPrice,
                 remainingQuantity,
                 remainingTime
@@ -60,5 +60,17 @@ public class PromotionDTO {
 
     public String getRemainingTime() {
         return remainingTime;
+    }
+
+    @Override
+    public String toString() {
+        return "PromotionDTO{" +
+                "promotionId=" + promotionId +
+                ", productName='" + productName + '\'' +
+                ", productDescription='" + productDescription + '\'' +
+                ", discountedPrice=" + discountedPrice +
+                ", remainingQuantity=" + remainingQuantity +
+                ", remainingTime='" + remainingTime + '\'' +
+                '}';
     }
 }

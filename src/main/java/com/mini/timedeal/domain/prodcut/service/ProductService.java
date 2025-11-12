@@ -2,12 +2,12 @@ package com.mini.timedeal.domain.prodcut.service;
 
 import com.mini.timedeal.domain.prodcut.model.Product;
 import com.mini.timedeal.domain.prodcut.dto.ProductDTO;
-import com.mini.timedeal.domain.prodcut.mapper.productMapper;
+import com.mini.timedeal.domain.prodcut.mapper.ProductMapper;
 
 public class ProductService {
 
-    private final productMapper productMapper;// 생성자 주입
-    public ProductService(productMapper productMapper) {
+    private final ProductMapper productMapper;// 생성자 주입
+    public ProductService(ProductMapper productMapper) {
         this.productMapper = productMapper;
     }
 
