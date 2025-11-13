@@ -47,9 +47,9 @@ public final class AppConfig {
         context.registerBeanObject(sqlSession.getMapper(UserProductMapper.class));
         
         // Service 등록
-        context.registerBean(PromotionService.class, PromotionMapper.class);
+        context.registerBean(PromotionService.class, PromotionMapper.class, ProductMapper.class);
         context.registerBean(ProductService.class, ProductMapper.class);
-        context.registerBean(UserService.class, UserMapper.class);
+        context.registerBean(UserService.class, UserMapper.class, UserProductMapper.class, PromotionMapper.class);
         context.registerBean(UserProductService.class, UserProductMapper.class);
     }
 }

@@ -1,7 +1,9 @@
 package com.mini.timedeal.config;
 
+import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import org.apache.ibatis.builder.xml.XMLMapperBuilder;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.Configuration;
@@ -38,19 +40,20 @@ public class MyBatisConfig {
 
             configuration.setMapUnderscoreToCamelCase(true);
 
-            String resource = "mappers/PromotionMapper.xml";
-            InputStream inputStream = Resources.getResourceAsStream(resource);
-            configuration.addMapper(com.mini.timedeal.domain.promotion.mapper.PromotionMapper.class);
+            String[] mapperFiles = {
+                    "mappers/PromotionMapper.xml",
+                    "mappers/ProductMapper.xml",
+                    "mappers/UserMapper.xml",
+                    "mappers/UserProductMapper.xml"
+            };
 
-            org.apache.ibatis.builder.xml.XMLMapperBuilder mapperParser = 
-                new org.apache.ibatis.builder.xml.XMLMapperBuilder(
-                    inputStream, 
-                    configuration, 
-                    resource, 
-                    configuration.getSqlFragments()
-                );
-            mapperParser.parse();
-            
+            for (String resource : mapperFiles) {
+                try (InputStream inputStream = Resources.getResourceAsStream(resource)) {
+                    XMLMapperBuilder mapperParser = new XMLMapperBuilder(inputStream, configuration, resource, configuration.getSqlFragments());
+                    mapperParser.parse();
+                }
+            }
+
             return new SqlSessionFactoryBuilder().build(configuration);
             
         } catch (IOException e) {
