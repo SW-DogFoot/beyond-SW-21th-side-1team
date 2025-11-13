@@ -2,7 +2,7 @@ package com.mini.timedeal.domain;
 
 import com.mini.timedeal.config.AppConfig;
 import com.mini.timedeal.config.AppContext;
-import com.mini.timedeal.domain.prodcut.service.ProductService;
+import com.mini.timedeal.domain.product.service.ProductService;
 import com.mini.timedeal.domain.promotion.service.PromotionService;
 import com.mini.timedeal.domain.user.service.UserProductService;
 import com.mini.timedeal.domain.user.service.UserService;

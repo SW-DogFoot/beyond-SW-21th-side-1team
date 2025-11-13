@@ -1,8 +1,8 @@
 package com.mini.timedeal.config;
 
-import com.mini.timedeal.domain.prodcut.mapper.ProductMapper;
-import com.mini.timedeal.domain.prodcut.service.ProductService;
-import com.mini.timedeal.domain.prodcut.storage.ProductRepository;
+import com.mini.timedeal.domain.product.mapper.ProductMapper;
+import com.mini.timedeal.domain.product.service.ProductService;
+import com.mini.timedeal.domain.product.storage.ProductRepository;
 import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
 import com.mini.timedeal.domain.promotion.service.PromotionService;
 import com.mini.timedeal.domain.promotion.storage.PromotionRepository;

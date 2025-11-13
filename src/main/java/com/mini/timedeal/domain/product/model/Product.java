@@ -1,4 +1,4 @@
-package com.mini.timedeal.domain.prodcut.model;
+package com.mini.timedeal.domain.product.model;
 
 /**
  * 상품

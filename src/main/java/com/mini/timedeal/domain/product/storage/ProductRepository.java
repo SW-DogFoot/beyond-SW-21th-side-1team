@@ -1,7 +1,7 @@
-package com.mini.timedeal.domain.prodcut.storage;
+package com.mini.timedeal.domain.product.storage;
 
-import com.mini.timedeal.domain.prodcut.model.Product;
-import com.mini.timedeal.domain.prodcut.mapper.ProductMapper;
+import com.mini.timedeal.domain.product.model.Product;
+import com.mini.timedeal.domain.product.mapper.ProductMapper;
 
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +13,7 @@ public class ProductRepository implements ProductMapper {
     private final Map<Long, Product> products = new HashMap<>();
 
     public ProductRepository() {
+        products.put(1L, new Product(1L, "기타", "일렉기타", 10000));
     }
 
     @Override

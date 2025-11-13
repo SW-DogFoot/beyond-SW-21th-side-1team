@@ -1,6 +1,6 @@
 package com.mini.timedeal.domain.user.dto;
 
-import com.mini.timedeal.domain.prodcut.model.Product;
+import com.mini.timedeal.domain.product.model.Product;
 import com.mini.timedeal.domain.promotion.model.Promotion;
 
 import java.time.LocalDateTime;

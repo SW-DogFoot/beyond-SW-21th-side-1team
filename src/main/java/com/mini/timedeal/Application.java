@@ -1,8 +1,8 @@
 package com.mini.timedeal;
 
 import com.mini.timedeal.config.AppContext;
-import com.mini.timedeal.domain.prodcut.dto.ProductDTO;
-import com.mini.timedeal.domain.prodcut.service.ProductService;
+import com.mini.timedeal.domain.product.dto.ProductDTO;
+import com.mini.timedeal.domain.product.service.ProductService;
 import com.mini.timedeal.domain.promotion.scheduler.PromotionScheduler;
 import com.mini.timedeal.config.AppConfig;
 import com.mini.timedeal.domain.promotion.service.PromotionService;

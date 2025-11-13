@@ -1,8 +1,8 @@
-package com.mini.timedeal.domain.prodcut.service;
+package com.mini.timedeal.domain.product.service;
 
-import com.mini.timedeal.domain.prodcut.model.Product;
-import com.mini.timedeal.domain.prodcut.dto.ProductDTO;
-import com.mini.timedeal.domain.prodcut.mapper.ProductMapper;
+import com.mini.timedeal.domain.product.model.Product;
+import com.mini.timedeal.domain.product.dto.ProductDTO;
+import com.mini.timedeal.domain.product.mapper.ProductMapper;
 
 public class ProductService {
 
