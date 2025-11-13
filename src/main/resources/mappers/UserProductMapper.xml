@@ -5,4 +5,22 @@
 
 <mapper namespace="com.mini.timedeal.domain.user.mapper.UserProductMapper">
 
+    <resultMap id="userProductMap" type="com.mini.timedeal.domain.user.model.UserProduct">
+        <id property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="productId" column="product_id"/>
+        <result property="purchasedAt" column="purchased_at"/>
+    </resultMap>
+
+    <!-- 구매 내역 저장 -->
+    <insert id="saveUserProducts" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user_products (user_id, product_id, purchased_at)
+        VALUES (#{userId}, #{productId}, #{purchasedAt})
+    </insert>
+
+    <!-- 구매 내역 조회 -->
+    <select id="getUserProducts" parameterType="long" resultMap="userProductMap">
+        SELECT * FROM user_products WHERE id = #{id}
+    </select>
+
 </mapper>

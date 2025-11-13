@@ -50,4 +50,11 @@
         DELETE FROM promotions WHERE id = #{id}
     </delete>
 
+    <!-- 재고 차감 -->
+    <update id="decreaseStock" parameterType="long">
+        UPDATE promotions
+        SET total_quantity = #{totalQuantity}
+        WHERE id = #{id}
+    </update>
+
 </mapper>
