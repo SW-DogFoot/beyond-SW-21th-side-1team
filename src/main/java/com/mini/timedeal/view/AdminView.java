@@ -8,6 +8,7 @@ import com.mini.timedeal.domain.promotion.service.PromotionService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 public class AdminView {
@@ -65,6 +66,7 @@ public class AdminView {
                     break;
                 case 5:
                     // 상품 전체 조회
+                    searchAllProducts();
                     break;
                 case 6:
                     // 프로모션 등록
@@ -148,6 +150,18 @@ public class AdminView {
             System.out.println("해당 상품이 존재하지 않습니다.");
         } else {
             printProduct(product);
+        }
+    }
+
+    private void searchAllProducts() {
+        System.out.println("전체 상품 목록 조회");
+        List<Product> products= productService.searchAllProduct();
+        if (products == null) {
+            System.out.println("해당 상품이 존재하지 않음");
+        } else {
+            for(Product product: products) {
+                printProduct(product);
+            }
         }
     }
 

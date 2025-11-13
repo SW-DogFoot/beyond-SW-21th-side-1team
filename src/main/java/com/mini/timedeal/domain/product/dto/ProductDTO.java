@@ -2,10 +2,6 @@ package com.mini.timedeal.domain.product.dto;
 
 public class ProductDTO {
 
-    // 판매자 정보
-    private Long adminId;
-    private String adminName;
-
     // 상품 정보
     private String name;
     private String description;
@@ -14,28 +10,10 @@ public class ProductDTO {
     public ProductDTO() {
     }
 
-    public ProductDTO(Long adminId, String adminName, String name, String description, Integer price) {
-        this.adminId = adminId;
-        this.adminName = adminName;
+    public ProductDTO(String name, String description, Integer price) {
         this.name = name;
         this.description = description;
         this.price = price;
-    }
-
-    public Long getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(Long adminId) {
-        this.adminId = adminId;
-    }
-
-    public String getAdminName() {
-        return adminName;
-    }
-
-    public void setAdminName(String adminName) {
-        this.adminName = adminName;
     }
 
     public String getName() {

@@ -5,4 +5,11 @@
 
 <mapper namespace="com.mini.timedeal.domain.product.mapper.ProductMapper">
 
+<!--    private Long id;
+    private String name;
+    private String description;
+    private Integer price;-->
+
+<!--    <id property="model에 있는거" column="스키마에  있는거"/>-->
+
 </mapper>

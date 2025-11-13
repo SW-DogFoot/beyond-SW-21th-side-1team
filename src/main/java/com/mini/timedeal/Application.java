@@ -46,9 +46,9 @@ public class Application {
         userService.addUser(new User(3L, "asdf", "1234", UserRole.ADMIN));
 
         // product
-        productService.addProduct(new ProductDTO(1L, "admin", "computer", "computer desc", 5000));
-        productService.addProduct(new ProductDTO(1L, "admin", "book", "book desc", 1000));
-        productService.addProduct(new ProductDTO(1L, "admin", "apple", "apple desc", 500));
+        productService.addProduct(new ProductDTO("computer", "computer desc", 5000));
+        productService.addProduct(new ProductDTO("book", "book desc", 1000));
+        productService.addProduct(new ProductDTO("apple", "apple desc", 500));
 
         // promotion
         promotionService.registerPromotion(1, 10, 100, LocalDateTime.now().plusSeconds(10), LocalDateTime.now().plusSeconds(30));
