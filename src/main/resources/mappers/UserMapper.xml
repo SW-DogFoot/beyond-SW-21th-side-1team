@@ -5,4 +5,22 @@
 
 <mapper namespace="com.mini.timedeal.domain.user.mapper.UserMapper">
 
+    <resultMap id="userMap" type="com.mini.timedeal.domain.user.model.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="role" column="role"/>
+    </resultMap>
+
+    <!-- 아이디, 비번으로 유저 조회 -->
+    <select id="findByUsernameAndPassword" parameterType="com.mini.timedeal.domain.user.model.User" resultMap="userMap">
+        SELECT * FROM users WHERE username = #{username}
+    </select>
+
+    <!-- 유저 추가 -->
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO users (username, password, role)
+        VALUES (#{username}, #{password}, #{role})
+    </insert>
+
 </mapper>
