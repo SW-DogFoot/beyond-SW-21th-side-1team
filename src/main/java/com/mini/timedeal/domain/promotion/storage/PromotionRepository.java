@@ -5,7 +5,6 @@ import com.mini.timedeal.enums.PromotionStatus;
 import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +14,8 @@ public final class PromotionRepository implements PromotionMapper {
     private final Map<Long, Promotion> promotions = new HashMap<>();
 
     public PromotionRepository() {
-        promotions.put(1L, new Promotion(1L,10, 100, LocalDateTime.now().plusMinutes(1), LocalDateTime.now().plusMinutes(10)));
+        LocalDateTime now = LocalDateTime.now();
+        promotions.put(1L, new Promotion(1L, 10, 100, now.minusMinutes(5), now.plusMinutes(10)));
     }
 
     @Override

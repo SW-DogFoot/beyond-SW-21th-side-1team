@@ -1,15 +1,9 @@
 package com.mini.timedeal.domain.user.storage;
 
-import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
-import com.mini.timedeal.domain.promotion.model.Promotion;
-import com.mini.timedeal.domain.promotion.storage.PromotionRepository;
 import com.mini.timedeal.domain.user.mapper.UserMapper;
-import com.mini.timedeal.domain.user.mapper.UserProductMapper;
 import com.mini.timedeal.domain.user.model.User;
-import com.mini.timedeal.domain.user.model.UserProduct;
 import com.mini.timedeal.enums.UserRole;
 
-import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 

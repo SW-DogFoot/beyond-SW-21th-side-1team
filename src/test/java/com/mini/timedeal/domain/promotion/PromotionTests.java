@@ -2,12 +2,9 @@ package com.mini.timedeal.domain.promotion;
 
 import com.mini.timedeal.config.AppConfig;
 import com.mini.timedeal.config.AppContext;
-import com.mini.timedeal.domain.prodcut.dto.ProductDTO;
-import com.mini.timedeal.domain.prodcut.model.Product;
-import com.mini.timedeal.domain.prodcut.service.ProductService;
-import com.mini.timedeal.domain.prodcut.storage.ProductRepository;
+import com.mini.timedeal.domain.product.model.Product;
+import com.mini.timedeal.domain.product.storage.ProductRepository;
 import com.mini.timedeal.domain.promotion.dto.PromotionDTO;
-import com.mini.timedeal.domain.promotion.model.Promotion;
 import com.mini.timedeal.domain.promotion.scheduler.PromotionScheduler;
 import com.mini.timedeal.enums.PromotionStatus;
 import com.mini.timedeal.view.PromotionView;

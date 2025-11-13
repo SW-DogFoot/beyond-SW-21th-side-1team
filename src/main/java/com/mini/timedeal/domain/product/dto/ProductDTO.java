@@ -1,4 +1,4 @@
-package com.mini.timedeal.domain.prodcut.dto;
+package com.mini.timedeal.domain.product.dto;
 
 public class ProductDTO {
 

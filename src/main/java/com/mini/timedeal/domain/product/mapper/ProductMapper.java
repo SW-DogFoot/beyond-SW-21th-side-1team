@@ -1,6 +1,6 @@
-package com.mini.timedeal.domain.prodcut.mapper;
+package com.mini.timedeal.domain.product.mapper;
 
-import com.mini.timedeal.domain.prodcut.model.Product;
+import com.mini.timedeal.domain.product.model.Product;
 
 import java.util.List;
 

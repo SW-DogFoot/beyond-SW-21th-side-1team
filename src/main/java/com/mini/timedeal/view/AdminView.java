@@ -1,9 +1,9 @@
 package com.mini.timedeal.view;
 
 import com.mini.timedeal.config.AppContext;
-import com.mini.timedeal.domain.prodcut.dto.ProductDTO;
-import com.mini.timedeal.domain.prodcut.model.Product;
-import com.mini.timedeal.domain.prodcut.service.ProductService;
+import com.mini.timedeal.domain.product.dto.ProductDTO;
+import com.mini.timedeal.domain.product.model.Product;
+import com.mini.timedeal.domain.product.service.ProductService;
 import com.mini.timedeal.domain.promotion.service.PromotionService;
 
 import java.time.LocalDateTime;
