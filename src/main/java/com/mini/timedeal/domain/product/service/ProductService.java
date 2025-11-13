@@ -4,6 +4,8 @@ import com.mini.timedeal.domain.product.model.Product;
 import com.mini.timedeal.domain.product.dto.ProductDTO;
 import com.mini.timedeal.domain.product.mapper.ProductMapper;
 
+import java.util.List;
+
 public class ProductService {
 
     private final ProductMapper productMapper;// 생성자 주입
@@ -33,8 +35,13 @@ public class ProductService {
         product.setPrice(dto.getPrice());
         this.productMapper.updateProduct(product);
     }
-    // 상품 검색
+    // 상품 검색(특정)
     public Product searchProduct(Long productId) {
         return productMapper.findById(productId);
+    }
+
+    // 상품 전체 조회
+    public List<Product> searchAllProduct() {
+        return productMapper.findAll();
     }
 }
