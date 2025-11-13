@@ -3,15 +3,12 @@ package com.mini.timedeal.domain.user.service;
 import com.mini.timedeal.config.AppContext;
 import com.mini.timedeal.domain.promotion.mapper.PromotionMapper;
 import com.mini.timedeal.domain.promotion.model.Promotion;
-import com.mini.timedeal.domain.promotion.storage.PromotionRepository;
 import com.mini.timedeal.domain.user.mapper.UserMapper;
 import com.mini.timedeal.domain.user.mapper.UserProductMapper;
 import com.mini.timedeal.domain.user.model.User;
 import com.mini.timedeal.domain.user.model.UserProduct;
-import com.mini.timedeal.domain.user.storage.UserProductRepository;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 public class UserService {
 
@@ -27,6 +24,14 @@ public class UserService {
     }
 
     /*
+     * 사용자 추가
+     * */
+    public void addUser(User user) {
+
+        userMapper.addUser(user);
+    }
+
+    /*
     * 로그인
     * */
     public User login(String username, String password) {
@@ -37,7 +42,7 @@ public class UserService {
     /*
     * 프로모션 상품 주문
     * */
-    public UserProduct order(Long promotionId, User currentUser) {
+    public void order(Long promotionId, User currentUser) {
 
         // 프로모션 조회/검증
         Promotion promotion = promotionMapper.findById(promotionId);
@@ -64,7 +69,5 @@ public class UserService {
         );
         userProductMapper.saveUserProducts(userProduct);
         System.out.println("구매가 완료되었습니다.");
-
-        return userProduct;
     }
 }
