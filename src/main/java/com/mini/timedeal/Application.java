@@ -6,8 +6,11 @@ import com.mini.timedeal.domain.product.service.ProductService;
 import com.mini.timedeal.domain.promotion.scheduler.PromotionScheduler;
 import com.mini.timedeal.config.AppConfig;
 import com.mini.timedeal.domain.promotion.service.PromotionService;
+import com.mini.timedeal.domain.user.model.User;
+import com.mini.timedeal.domain.user.model.UserProduct;
 import com.mini.timedeal.domain.user.service.UserProductService;
 import com.mini.timedeal.domain.user.service.UserService;
+import com.mini.timedeal.enums.UserRole;
 import com.mini.timedeal.view.LoginView;
 
 import java.time.LocalDateTime;
@@ -38,6 +41,9 @@ public class Application {
         UserProductService userProductService = context.getBean(UserProductService.class);
 
         // user
+        userService.addUser(new User(1L, "qwer", "1234", UserRole.USER));
+        userService.addUser(new User(2L, "wert", "1234", UserRole.USER));
+        userService.addUser(new User(3L, "asdf", "1234", UserRole.ADMIN));
 
         // product
         productService.addProduct(new ProductDTO(1L, "admin", "computer", "computer desc", 5000));

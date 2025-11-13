@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface UserProductMapper {
     void saveUserProducts(UserProduct userProduct);
-    List<UserProductDTO> getUserProducts(Long userId);
+    List<UserProduct> getUserProducts(Long userId);
 }
