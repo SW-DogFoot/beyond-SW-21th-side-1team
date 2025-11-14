@@ -13,8 +13,8 @@
     </resultMap>
 
     <!-- 아이디, 비번으로 유저 조회 -->
-    <select id="findByUsernameAndPassword" parameterType="com.mini.timedeal.domain.user.model.User" resultMap="userMap">
-        SELECT * FROM users WHERE username = #{username}
+    <select id="findByUsernameAndPassword" parameterType="" resultMap="userMap">
+        SELECT * FROM users WHERE username = #{username} AND password = #{password}
     </select>
 
     <!-- 유저 추가 -->

@@ -50,6 +50,6 @@ public final class AppConfig {
         context.registerBean(PromotionService.class, PromotionMapper.class, ProductMapper.class);
         context.registerBean(ProductService.class, ProductMapper.class);
         context.registerBean(UserService.class, UserMapper.class, UserProductMapper.class, PromotionMapper.class);
-        context.registerBean(UserProductService.class, UserProductMapper.class);
+        context.registerBean(UserProductService.class, UserProductMapper.class, ProductMapper.class, PromotionMapper.class);
     }
 }
