@@ -53,8 +53,8 @@
     <!-- 재고 차감 -->
     <update id="decreaseStock" parameterType="long">
         UPDATE promotions
-        SET total_quantity = #{totalQuantity}
-        WHERE id = #{id}
+        SET issued_quantity = issued_quantity + 1
+        WHERE id = #{promotionId}
     </update>
 
 </mapper>

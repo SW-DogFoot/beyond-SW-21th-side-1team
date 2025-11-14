@@ -13,7 +13,7 @@
     </resultMap>
 
     <!-- 아이디, 비번으로 유저 조회 -->
-    <select id="findByUsernameAndPassword" parameterType="" resultMap="userMap">
+    <select id="findByUsernameAndPassword" resultMap="userMap">
         SELECT * FROM users WHERE username = #{username} AND password = #{password}
     </select>
 

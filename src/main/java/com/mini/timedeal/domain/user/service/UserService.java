@@ -9,6 +9,8 @@ import com.mini.timedeal.domain.user.model.User;
 import com.mini.timedeal.domain.user.model.UserProduct;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserService {
 
@@ -35,8 +37,10 @@ public class UserService {
     * 로그인
     * */
     public User login(String username, String password) {
-
-        return userMapper.findByUsernameAndPassword(username, password);
+        Map<String, String> map = new HashMap<>();
+        map.put("username", username);
+        map.put("password", password);
+        return userMapper.findByUsernameAndPassword(map);
     }
 
     /*

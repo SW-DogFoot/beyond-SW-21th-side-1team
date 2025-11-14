@@ -22,13 +22,13 @@ public class UserRepository implements UserMapper {
     }
 
     @Override
-    public User findByUsernameAndPassword(String username, String password) {
-
-        currentUser = users.get(username);
-
-        if (currentUser != null && currentUser.getPassword().equals(password)) {
-            return currentUser;
-        }
+    public User findByUsernameAndPassword(Map<String, String> user) {
+//
+//        currentUser = users.get(username);
+//
+//        if (currentUser != null && currentUser.getPassword().equals(password)) {
+//            return currentUser;
+//        }
         return null;
     }
 }
