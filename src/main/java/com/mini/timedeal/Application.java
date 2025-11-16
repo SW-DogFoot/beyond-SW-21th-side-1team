@@ -30,6 +30,7 @@ public class Application {
         scheduler.start();
 
         LoginView loginView = new LoginView();
+        loginView.title();
         loginView.login();
 
         scheduler.shutdown();
