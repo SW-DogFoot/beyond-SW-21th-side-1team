@@ -50,9 +50,11 @@ public class UserService {
 
         // 프로모션 조회/검증
         Promotion promotion = promotionMapper.findById(promotionId);
+        // 1) 존재 여부 확인
         if (promotion == null) {
             throw new IllegalArgumentException("존재하지 않는 프로모션입니다.");
         }
+        // 2) 프로모션 주문 가능 여부 확인
         LocalDateTime now = LocalDateTime.now();
         if (now.isBefore(promotion.getStartTime())) {
             throw new IllegalStateException("아직 시작되지 않은 프로모션입니다.");
@@ -72,6 +74,7 @@ public class UserService {
                 now
         );
         userProductMapper.saveUserProducts(userProduct);
+
         System.out.println("구매가 완료되었습니다.");
     }
 }

@@ -53,3 +53,20 @@ DELETE FROM promotions;
 DELETE FROM user_products;
 DELETE FROM products;
 DELETE FROM users;
+
+insert into users (username, password, role)
+values ('asdf', 'asdf', 'USER');
+
+insert into user_products (user_id, product_id)
+values (4, 1);
+
+insert into user_products (user_id, product_id)
+values (4, 3);
+
+insert into products (name, description, price)
+values ('기타', '빨강색', 10000)
+
+insert into products (name, description, price)
+values ('car', '빨강색', 10000)
+
+delete from products where id = 3

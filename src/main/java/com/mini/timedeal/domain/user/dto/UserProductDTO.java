@@ -30,11 +30,19 @@ public class UserProductDTO {
         );
     }
 
-    @Override
-    public String toString() {
-        return "프로모션 아이디=" + promotionId +
-                ", 상품 이름=" + productName +
-                ", 가격=" + price +
-                ", 구매일=" + purchasedAt;
+    public Long getPromotionId() {
+        return promotionId;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getPurchasedAt() {
+        return purchasedAt;
     }
 }
